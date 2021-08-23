@@ -14,6 +14,8 @@
   },
   "devDependencies": {},
   "scripts": {
+    "start": "node index.js",
+    "start:dav": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
