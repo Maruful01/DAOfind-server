@@ -43,13 +43,28 @@ client.connect(err => {
     })
    })
 
-   app.get ('/edit', (req, res) => {
-    // console.log (req.query.id)
-    daoCollection.find ({id: req.query.id})
+  //  app.get ('/edit', (req, res) => {
+  //   // console.log (req.query.id)
+  //   daoCollection.find ({id: req.query.id})
+  //   .toArray ((err, documents) => {
+  //     res.send (documents);
+  //   })
+  // })
+
+  app.get ('/search', (req, res) => {
+    daoCollection.find ({name: req.query.name})
     .toArray ((err, documents) => {
       res.send (documents);
     })
   })
+
+  app.get ('/searchCtg', (req, res) => {
+    daoCollection.find ({category: req.query.category})
+    .toArray ((err, documents) => {
+      res.send (documents);
+    })
+  })
+
 
   app.post ('/editDao', (req, res) => {
 
